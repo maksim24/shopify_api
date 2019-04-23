@@ -6,7 +6,7 @@ module ShopifyAPI
     include Metafields
 
     def products(options = {})
-      Product.find(:all, from: "/admin/collections/#{id}/products.json", params: options)
+      Product.find(:all, from: "#{self.class.prefix}collections/#{id}/products.json", params: options)
     end
   end
 end
